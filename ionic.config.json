@@ -1,0 +1,7 @@
+{
+  "name": "DineOutTheme",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
