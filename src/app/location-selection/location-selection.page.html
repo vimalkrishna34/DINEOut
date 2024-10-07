@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Select Location</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/">Back</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item button *ngFor="let location of locations" (click)="selectLocation(location)">
+      <ion-label>{{ location }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

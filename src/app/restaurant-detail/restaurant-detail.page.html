@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ restaurant.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-img [src]="restaurant.image"></ion-img>
+    <ion-card-header>
+      <ion-card-title>{{ restaurant.name }}</ion-card-title>
+      <ion-card-subtitle>{{ restaurant.cuisine }} - ₹{{ restaurant.budget }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>{{ restaurant.description }}</p>
+      <ion-button expand="block" color="success" (click)="addToFavorites()">Add to Favorites</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
