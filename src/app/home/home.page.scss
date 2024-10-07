@@ -321,7 +321,7 @@ body {
 
 .service-card {
   background: rgb(231,208,135);
-  background: linear-gradient(83deg, rgba(101, 77, 56, 0.575) 17%, rgba(236,234,223,1) 87%);  border-radius: 15px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 223, 186, 0.8));
   width: 300px;
   text-align: center;
   padding: 20px;
@@ -494,12 +494,9 @@ ion-card-content p {
   }
 }
 .about-dine {
-  background: linear-gradient(to right, #f8e1f4, #d1c4e9); /* Light gradients */
-  padding: 40px;
-  text-align: center;
-  border-radius: 15px;
-  margin: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+background: rgb(230,213,201);
+background: linear-gradient(83deg, rgba(230,213,201,1) 100%, rgba(200,195,184,0.9417016806722689) 100%);
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
 .about-dine h2 {
@@ -518,8 +515,7 @@ ion-card-content p {
 
 /* Adjusting the card styles for a more elegant appearance */
 ion-card {
-  background: #ffffff; /* White background */
-  border-radius: 10px; /* Rounded corners */
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(232, 135, 25, 0.545));
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
 }
 
@@ -541,10 +537,9 @@ ion-card-title {
 .details-button {
   background: linear-gradient(to right, #6a1b9a, #8e24aa); /* Gradient button */
   color: white; /* Text color */
-  transition: background 0.3s; /* Smooth background change */
+  transition: background 0.3s; 
 }
 
 .details-button:hover {
-  background: linear-gradient(to right, #8e24aa, #6a1b9a); /* Reverse gradient on hover */
+  background: linear-gradient(to right, #8e24aa, #6a1b9a); 
 }
-

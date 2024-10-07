@@ -1,0 +1,138 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="heart-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <!-- Background Image -->
+  <div class="background-image">
+    <img src="https://www.itchotels.com/content/dam/itchotels/in/umbrella/destinations/images/desktop/hyderabad.png" alt="Hyderabad">
+  </div>
+
+  <!-- City Information Overlay -->
+  <div class="city-info">
+    <h1>Hyderabad</h1>
+  </div>
+
+  <!-- Category Cards -->
+  <div class="category-cards">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-md="4">
+          <ion-card class="card-center">
+            <ion-icon name="star-outline" size="large"></ion-icon>
+            <p>Premium restaurant</p>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" size-md="4">
+          <ion-card class="card-center">
+            <ion-icon name="wallet-outline" size="large"></ion-icon>
+            <p>Budget-friendly restaurant</p>
+          </ion-card>
+        </ion-col>
+        <ion-col size="12" size-md="4">
+          <ion-card class="card-center">
+            <ion-icon name="wine-outline" size="large"></ion-icon>
+            <p>Clubs/Pubs</p>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+
+<!-- Styling -->
+<style>
+  ion-content {
+    --background: transparent;
+  }
+
+  .background-image img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .city-info {
+    text-align: center;
+    color: white;
+    margin-top: 80px;
+    padding: 0 20px;
+  }
+
+  .category-cards {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .card-center {
+    text-align: center;
+    color: rgba(36, 33, 33, 0.801);
+    background: rgba(170, 170, 163, 0.74);
+    border-radius: 15px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+  }
+
+  .card-center:hover {
+    background: rgba(89, 90, 87, 0.74);
+  }
+
+  ion-icon {
+    color: rgb(71, 66, 66);
+  }
+
+  p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+
+  @media (min-width: 768px) {
+    .city-info h1 {
+      font-size: 2.5rem;
+    }
+
+    .city-info p {
+      font-size: 1.2rem;
+    }
+
+    .category-cards {
+      bottom: 50px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .city-info h1 {
+      font-size: 3rem;
+    }
+
+    .city-info p {
+      font-size: 1.5rem;
+    }
+
+    .category-cards {
+      bottom: 80px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  }
+</style>

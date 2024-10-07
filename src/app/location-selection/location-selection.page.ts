@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-location-selection',
@@ -7,13 +7,35 @@ import { Router } from '@angular/router';
   styleUrls: ['./location-selection.page.scss'],
 })
 export class LocationSelectionPage {
-  locations: string[] = ['Hyderabad', 'Delhi', 'Kochi', 'Mumbai', 'Bengaluru', 'Amritsar', 'Kerala', 'Vizag'];
+goBack() {
+throw new Error('Method not implemented.');
+}
 
-  constructor(private router: Router) {}
+  constructor(private navCtrl: NavController) { }
 
-  selectLocation(location: string) {
-    // You can add logic to store the selected location if needed.
-    // For example, navigate to a specific page based on selection:
-    this.router.navigate(['/selected-location', { location: location }]);
+  goToLocation(city: string) {
+    switch(city) {
+      case 'Hyderabad':
+        this.navCtrl.navigateForward('/hyderabad');
+        break;
+      case 'Delhi':
+        this.navCtrl.navigateForward('/delhi');
+        break;
+      case 'Mumbai':
+        this.navCtrl.navigateForward('/mumbai');
+        break;
+      case 'Kochi':
+        this.navCtrl.navigateForward('/kochi');
+        break;
+      case 'Amritsar':
+        this.navCtrl.navigateForward('/amritsar');
+        break;
+      case 'Bengaluru':
+        this.navCtrl.navigateForward('/bengaluru');
+        break;
+      default:
+        console.error('Invalid city:', city);
+        break;
+    }
   }
 }

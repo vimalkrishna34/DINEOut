@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { RefresherEventDetail } from '@ionic/angular';
+import { IonRefresherCustomEvent } from '@ionic/core';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
   locations = [
     {
       title: 'Hyderabad & Delhi',
@@ -27,4 +28,9 @@ export class HomePage {
 
   constructor() {}
 
+  handleRefresh(event: IonRefresherCustomEvent<RefresherEventDetail>) {
+    setTimeout(() => {
+      event.target.complete();
+    }, 2000);
+  }
 }

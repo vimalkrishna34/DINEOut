@@ -1,0 +1,40 @@
+.booking-container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  ion-item {
+    --background: transparent;
+    margin-bottom: 15px;
+  }
+  
+  ion-label {
+    color: #555;
+  }
+  
+  ion-datetime, ion-select {
+    width: 100%;
+  }
+  
+  ion-button {
+    margin-top: 20px;
+    background-color: #4a90e2; /* Change to your preferred color */
+    color: white;
+  }
+  
+  ion-button:hover {
+    background-color: #357ABD; /* Darker shade on hover */
+  }
+  
+  /* Toast Customization */
+  .custom-toast {
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background for toast */
+    color: white;
+  }
+  
