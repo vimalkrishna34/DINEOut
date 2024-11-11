@@ -1,65 +1,55 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <!-- Back button -->
-    <ion-buttons slot="start">
-      <ion-button (click)="goBack()">
-        <ion-icon name="arrow-back"></ion-icon> <!-- Back Icon -->
-      </ion-button>
+  <ion-toolbar class="navbar">
+    <ion-title>Dine Out</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/home">Home</ion-button>
+      <ion-button>Table-Booking</ion-button>
     </ion-buttons>
-    <ion-title>Dineout - Select Your City</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="hero-section">
-    <h1>Select Your Location</h1>
-    <p>Find dining areas within your budget!</p>
+  <div class="image-container">
+    <ion-img src="https://images.unsplash.com/photo-1488342994276-7c3bc0742042?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dining Area"></ion-img>
+
+    <div class="hero-section">
+      <h1>Select Your Location</h1>
+      <p>Find dining areas within your budget!</p>
+    </div>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" size-md="4" size-lg="3">
+          <ion-card button class="location-card" (click)="goToLocation('Hyderabad')">
+            <div class="city-name">Hyderabad</div>
+          </ion-card>
+        </ion-col>
+        <ion-col size="6" size-md="4" size-lg="3">
+          <ion-card button class="location-card" (click)="goToLocation('Delhi')">
+            <div class="city-name">Delhi</div>
+          </ion-card>
+        </ion-col>
+        <ion-col size="6" size-md="4" size-lg="3">
+          <ion-card button class="location-card" (click)="goToLocation('Kochi')">
+            <div class="city-name">Kochi</div>
+          </ion-card>
+        </ion-col>
+        <ion-col size="6" size-md="4" size-lg="3" (click)="goToLocation('Bengaluru')">
+          <ion-card button class="location-card">
+            <div class="city-name">Vizag</div>
+          </ion-card>
+        </ion-col>
+        <ion-col size="6" size-md="4" size-lg="3" (click)="goToLocation('Mumbai')">
+          <ion-card button class="location-card">
+            <div class="city-name">Mumbai</div>
+          </ion-card>
+        </ion-col>
+        <ion-col size="6" size-md="4" size-lg="3" (click)="goToLocation('Amritsar')">
+          <ion-card button class="location-card">
+            <div class="city-name">Amritsar</div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
-
-  <ion-grid>
-    <ion-row>
-      <ion-col size="6" size-md="4" size-lg="3">
-        <ion-card button (click)="goToLocation('Hyderabad')" class="location-card">
-          <img src="assets/Hyderabad.jpg" alt="Hyderabad" />
-          <div class="overlay">Hyderabad</div>
-        </ion-card>
-      </ion-col>
-      <ion-col size="6" size-md="4" size-lg="3">
-        <ion-card button (click)="goToLocation('Delhi')" class="location-card">
-          <img src="assets/delhi.jpg" alt="Delhi" />
-          <div class="overlay">Delhi</div>
-        </ion-card>
-      </ion-col>
-      <ion-col size="6" size-md="4" size-lg="3">
-        <ion-card button (click)="goToLocation('Kerala')" class="location-card">
-          <ion-img src="assets/kerala.jpg" alt="Kerala" />
-          <div class="overlay">Kochi</div>
-        </ion-card>
-      </ion-col>
-      <ion-col size="6" size-md="4" size-lg="3">
-        <ion-card button (click)="goToLocation('Vizag')" class="location-card">
-          <img src="assets/vizag.jpg" alt="Vizag" />
-          <div class="overlay">Vizag</div>
-        </ion-card>
-      </ion-col>
-      <ion-col size="6" size-md="4" size-lg="3">
-        <ion-card button (click)="goToLocation('Mumbai')" class="location-card">
-          <img src="assets/mumbai.jpg" alt="Mumbai" />
-          <div class="overlay">Mumbai</div>
-        </ion-card>
-      </ion-col>
-      <ion-col size="6" size-md="4" size-lg="3">
-        <ion-card button (click)="goToLocation('Amritsar')" class="location-card">
-          <img src="assets/amritsar.jpg" alt="Amritsar" />
-          <div class="overlay">Amritsar</div>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
 </ion-content>
-
-<ion-footer>
-  <ion-toolbar color="light">
-    <ion-title>© 2024 Dineout</ion-title>
-  </ion-toolbar>
-</ion-footer>

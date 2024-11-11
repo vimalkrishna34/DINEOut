@@ -1,0 +1,60 @@
+ion-content {
+    --background:#ebedee;
+  }
+  .restaurant-card {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .restaurant-img {
+    height: 150px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .restaurant-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .info h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    color: #000;
+  }
+  
+  .info p {
+    font-size: 14px;
+    color: #666;
+    margin: 2px 0;
+  }
+  
+  .meta {
+    text-align: right;
+  }
+  
+  .meta ion-badge {
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+  
+  .meta span {
+    display: block;
+    font-size: 14px;
+    color: #000;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  
+  .fav-icon {
+    color: #666;
+    font-size: 22px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }

@@ -7,9 +7,9 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./location-selection.page.scss'],
 })
 export class LocationSelectionPage {
-goBack() {
-throw new Error('Method not implemented.');
-}
+  goBack() {
+    this.navCtrl.navigateBack('/home');
+  }
 
   constructor(private navCtrl: NavController) { }
 

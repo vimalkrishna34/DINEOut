@@ -15,4 +15,14 @@ export class HyderabadPage implements OnInit {
   navigateToBooking() {
     this.router.navigate(['/booking']);
   }
+  navigateToBooking1() {
+    this.router.navigate(['/clu-hyd']);
+  } 
+  navigateToBooking2() {
+    this.router.navigate(['/bud-hyd']);
+  }
+
+  goBack() {
+    this.router.navigate(['/home']);
+  }
 }

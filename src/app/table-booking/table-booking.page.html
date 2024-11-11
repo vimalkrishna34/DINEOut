@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Book a Table</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form  (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label>City</ion-label>
+      <ion-select formControlName="city" required>
+        <ion-select-option value="Delhi">Delhi</ion-select-option>
+        <ion-select-option value="Mumbai">Mumbai</ion-select-option>
+        <ion-select-option value="Bangalore">Bangalore</ion-select-option>
+        <ion-select-option value="Kochi">Kochi</ion-select-option>
+        <ion-select-option value="Hyderabad">Hyderabad</ion-select-option>
+        <ion-select-option value="Amritsar">Amritsar</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Date</ion-label>
+      <ion-datetime formControlName="date" displayFormat="MMM DD, YYYY" required></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Time</ion-label>
+      <ion-datetime formControlName="time" displayFormat="HH:mm" pickerFormat="HH:mm" required></ion-datetime>
+    </ion-item>
+
+    <ion-button expand="full" type="submit" [disabled]="!bookingForm.valid">Book Table</ion-button>
+  </form>
+
+  <div *ngIf="confirmationMessage" class="confirmation-message">
+    {{ confirmationMessage }}
+  </div>
+</ion-content>

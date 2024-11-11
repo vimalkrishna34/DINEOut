@@ -1,0 +1,130 @@
+<ion-content>
+  <!-- First Restaurant Card (5 stars) -->
+  <ion-card class="restaurant-card simple-card">
+    <ion-img src="https://dineout-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/v1660374424/ylgm8u3lzmm1gxnhasie.jpg"></ion-img>
+    <ion-card-header>
+      <ion-card-title>Big Yellow Door</ion-card-title>
+      <ion-note>Delhi</ion-note>
+      <div class="star-rating">
+        <ion-icon name="star" class="simple-icon"></ion-icon>
+        <ion-icon name="star" class="simple-icon"></ion-icon>
+        <ion-icon name="star" class="simple-icon"></ion-icon>
+        <ion-icon name="star" class="simple-icon"></ion-icon>
+        <ion-icon name="star" class="simple-icon"></ion-icon>
+      </div>
+      <ion-label>1007 reviews</ion-label>
+    </ion-card-header>
+    <ion-card-content>
+      <p>“Affordable choice for you”</p>
+      <p>“This was our absolute favorite”</p>
+      <ion-button href="menu_link_here" fill="outline" shape="round" color="tertiary">View Menu</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Second Restaurant Card (4 stars) -->
+  <ion-card class="restaurant-card simple-card">
+    <ion-img src="https://b.zmtcdn.com/data/pictures/7/7227/29b12496e47001375afb6ccdf26ef603.jpg"></ion-img>
+    <ion-card-header>
+      <ion-card-title>Out of the Box</ion-card-title>
+      <ion-note>Delhi</ion-note>
+      <div class="star-rating">
+        <ion-icon name="star" class="simple-icon"></ion-icon>
+        <ion-icon name="star" class="simple-icon"></ion-icon>
+        <ion-icon name="star" class="simple-icon"></ion-icon>
+        <ion-icon name="star" class="simple-icon"></ion-icon>
+        <ion-icon name="star-outline" class="simple-icon"></ion-icon>
+      </div>
+      <ion-label>991 reviews</ion-label>
+    </ion-card-header>
+    <ion-card-content>
+      <p>“Best biryani at an affordable price”</p>
+      <p>“Must try”</p>
+      <ion-button href="menu_link_here" fill="outline" shape="round" color="tertiary">View Menu</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Third Restaurant Card -->
+  <ion-card class="restaurant-card simple-card">
+    <ion-img src="https://b.zmtcdn.com/data/pictures/chains/7/6677/f7299e192e0eb543b293728fa8ad16f4_featured_v2.jpg"></ion-img>
+    <ion-card-header>
+      <ion-card-title>Kake Di Hatti</ion-card-title>
+      <ion-note>Delhi</ion-note>
+      <div class="star-rating">
+        <ion-icon name="star" class="simple-icon"></ion-icon>
+        <ion-icon name="star" class="simple-icon"></ion-icon>
+        <ion-icon name="star" class="simple-icon"></ion-icon>
+        <ion-icon name="star" class="simple-icon"></ion-icon>
+        <ion-icon name="star-outline" class="simple-icon"></ion-icon>
+      </div>
+      <ion-label>973 reviews</ion-label>
+    </ion-card-header>
+    <ion-card-content>
+      <p>“Good ambience, good food, good price”</p>
+      <p>“Amazing food and service”</p>
+      <ion-button href="menu_link_here" fill="outline" shape="round" color="tertiary">View Menu</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<style>
+/* Simplified styling for restaurant cards */
+.simple-card {
+  border: 1px solid #ddd;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.simple-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Card content styling */
+ion-card-title {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+ion-note {
+  color: #555;
+  font-family: 'Arial', sans-serif;
+}
+
+blockquote {
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #444;
+}
+
+.simple-icon {
+  color: #f4b400; /* Star icon color */
+}
+
+/* Star rating styling */
+.star-rating {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+ion-button {
+  font-family: 'Arial', sans-serif;
+  --border-radius: 20px;
+}
+
+ion-img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+img {
+  transition: filter 0.3s ease;
+}
+
+img:hover {
+  filter: brightness(90%); /* Slight dimming on hover */
+}
+</style>

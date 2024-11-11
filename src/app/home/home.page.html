@@ -1,48 +1,223 @@
 <ion-header>
   <ion-toolbar class="navbar">
-    <ion-title>Ranty</ion-title>
+    <ion-title>Dine Out</ion-title>
     <ion-buttons slot="end">
-      <ion-button href="#">Homes</ion-button>
-      <ion-button href="#">About</ion-button>
-      <ion-button href="#">Contact</ion-button>
+      <ion-button routerLink="/home">Home</ion-button> 
+      <ion-button routerLink="/login">Sign-up</ion-button> 
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <section class="hero">
-    <div class="hero-text">
-      <h1>The Perfect Dineout</h1>
-      <p>We craft custom dining experiences.</p>
-      <ion-button class="start-button" color="dark" expand="block" routerLink="/location-selection">Explore</ion-button>
+  <div class="hero-image">
+    <img src="assets/home_im.jpg" alt="Modern Restaurant" />
+    <ion-icon 
+      name="search" 
+      class="search-icon">
+    </ion-icon>
+  </div>
+
+  <ion-button class="start-button" color="dark" expand="block" routerLink="/location-selection">Explore</ion-button>
+    <div class="offers-section">
+      <h3 style="font-weight: bolder; color: rgb(36, 35, 35); padding-left: 8px;" >Best offers</h3>
+      <ion-grid>
+        <ion-row class="offer-row">
+          <!-- First Offer Image -->
+          <ion-col size="3">
+            <div class="offer-card">
+              <ion-img src="https://im1.dineout.co.in/images/uploads/misc/2021/Feb/18/20offid.jpg?tr=tr:n-medium" alt="20% Off Offer" class="offer-image" />
+            </div>
+          </ion-col>
+    
+          <!-- Second Offer Image -->
+          <ion-col size="3">
+            <div class="offer-card">
+              <img src="https://im1.dineout.co.in/images/uploads/misc/2021/Feb/18/15offid.jpg?tr=tr:n-medium" alt="15% Off Offer" class="offer-image" />
+            </div>
+          </ion-col>
+    
+          <!-- Third Offer Image -->
+          <ion-col size="3">
+            <div class="offer-card">
+              <img src="https://im1.dineout.co.in/images/uploads/misc/2021/Feb/18/10offid.jpg?tr=tr:n-medium" alt="10% Off Offer" class="offer-image" />
+            </div>
+          </ion-col>
+    
+          <!-- Fourth Offer Image -->
+          <ion-col size="3">
+            <div class="offer-card">
+              <img src="https://im1.dineout.co.in/images/uploads/misc/2020/Aug/12/15offid.png?tr=tr:n-medium" alt="15% Off Offer" class="offer-image" />
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </div>
-    <div class="hero-image">
-      <img src="assets/home_im.jpg" alt="Modern Restaurant">
-    </div>
-  </section>
-
-  <section class="about-dine">
-    <h2>About Dine Out</h2>
-    <p>Experience culinary delights tailored to your preferences. Discover the best dining spots across major cities.</p>
-  </section>
-
-  <ion-grid>
-    <ion-row>
-      <ion-col size="12" size-md="6" *ngFor="let location of locations">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>{{ location.title }}</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-img [src]="location.image" alt="{{ location.title }}" class="profile-pic"></ion-img>
-            <p>{{ location.description }}</p>
-            <ion-button class="details-button" color="tertiary">View Options</ion-button>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  <ion-refresher slot="fixed" [pullFactor]="0.5" [pullMin]="100" [pullMax]="200" (ionRefresh)="handleRefresh($event)">
-    <ion-refresher-content></ion-refresher-content>
-  </ion-refresher></ion-content>
-
+    <div style="background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);">
+    <h3 style="font-weight: bolder; color: rgb(36, 35, 35); padding-left: 12px;" >Restaurants near you</h3>
+    <ion-grid>
+      <ion-row>
+        <!-- First Restaurant Card -->
+        <ion-col size="6">
+          <div class="restaurant-card">
+            <ion-img src="https://im1.dineout.co.in/images/uploads/restaurant/sharpen/4/h/d/p4367-16812198656435611976124.jpg?tr=tr:n-large" class="restaurant-img"></ion-img>
+            <div class="restaurant-details">
+              <div class="info">
+                <h2>Frozen Bottle</h2>
+                <p>R City Mall I Ghatkopar West I Mumbai</p>
+                <p>Desserts, Beverages</p>
+              </div>
+              <div class="meta">
+                <ion-badge color="success">4.7</ion-badge>
+                <span>₹400 for 2</span>
+              </div>
+            </div>
+            <ion-icon name="heart-outline" class="fav-icon"></ion-icon>
+          </div>
+        </ion-col>
+  
+        <!-- Second Restaurant Card -->
+        <ion-col size="6">
+          <div class="restaurant-card">
+            <ion-img src="https://im1.dineout.co.in/images/uploads/restaurant/sharpen/6/j/r/p6327-15758008765decd02c49d1a.jpg?tr=tr:n-medium" class="restaurant-img"></ion-img>
+            <div class="restaurant-details">
+              <div class="info">
+                <h2>Thambbi</h2>
+                <p>Kailash Business Park, Vikhroli West</p>
+                <p>South Indian, North Indian</p>
+              </div>
+              <div class="meta">
+                <ion-badge color="success">4.4</ion-badge>
+                <span>₹800 for 2</span>
+              </div>
+            </div>
+            <ion-icon name="heart-outline" class="fav-icon"></ion-icon>
+          </div>
+        </ion-col>
+  
+        <!-- Third Restaurant Card -->
+        <ion-col size="6">
+          <div class="restaurant-card">
+            <ion-img src="https://im1.dineout.co.in/images/uploads/restaurant/sharpen/8/t/z/p813-1646055380621ccfd4624c0.jpg?tr=tr:n-medium" class="restaurant-img"></ion-img>
+            <div class="restaurant-details">
+              <div class="info">
+                <h2>KSbarro - New York Pizza</h2>
+                <p>Kailash Business Park Vikhroli West Mumbai</p>
+                <p>Pizza, Fast Food, American, Italian</p>
+              </div>
+              <div class="meta">
+                <ion-badge color="success">3.3</ion-badge>
+                <span>₹700 for 2</span>
+              </div>
+            </div>
+            <ion-icon name="heart-outline" class="fav-icon"></ion-icon>
+          </div>
+        </ion-col>
+  
+        <!-- Fourth Restaurant Card -->
+        <ion-col size="6">
+          <div class="restaurant-card">
+            <ion-img src="https://im1.dineout.co.in/images/uploads/restaurant/sharpen/8/u/f/p807-15510888885c73bcf89fd8f.jpg?tr=tr:n-medium" class="restaurant-img"></ion-img>
+            <div class="restaurant-details">
+              <div class="info">
+                <h2>Malgudi</h2>
+                <p>R City Mall I Ghatkopar West I Mumbai</p>
+                <p>South Indian</p>
+              </div>
+              <div class="meta">
+                <ion-badge color="success">4.2</ion-badge>
+                <span>₹800 for 2</span>
+              </div>
+            </div>
+            <ion-icon name="heart-outline" class="fav-icon"></ion-icon>
+          </div>
+        </ion-col>
+  
+        <!-- Fifth Restaurant Card -->
+       
+      </ion-row>
+    </ion-grid>
+    <h3 style="font-weight: bolder; color: rgb(36, 35, 35); padding-left: 12px;" >Trending restaurants</h3>
+    <ion-grid>
+      <ion-row>
+        <!-- First Restaurant Card -->
+        <ion-col size="6">
+          <div class="restaurant-card">
+            <ion-img src="https://im1.dineout.co.in/images/uploads/restaurant/sharpen/4/h/d/p4367-16812198656435611976124.jpg?tr=tr:n-large" class="restaurant-img"></ion-img>
+            <div class="restaurant-details">
+              <div class="info">
+                <h2>Frozen Bottle</h2>
+                <p>R City Mall I Ghatkopar West I Mumbai</p>
+                <p>Desserts, Beverages</p>
+              </div>
+              <div class="meta">
+                <ion-badge color="success">4.7</ion-badge>
+                <span>₹400 for 2</span>
+              </div>
+            </div>
+            <ion-icon name="heart-outline" class="fav-icon"></ion-icon>
+          </div>
+        </ion-col>
+  
+        <!-- Second Restaurant Card -->
+        <ion-col size="6">
+          <div class="restaurant-card">
+            <ion-img src="https://im1.dineout.co.in/images/uploads/restaurant/sharpen/6/j/r/p6327-15758008765decd02c49d1a.jpg?tr=tr:n-medium" class="restaurant-img"></ion-img>
+            <div class="restaurant-details">
+              <div class="info">
+                <h2>Thambbi</h2>
+                <p>Kailash Business Park, Vikhroli West</p>
+                <p>South Indian, North Indian</p>
+              </div>
+              <div class="meta">
+                <ion-badge color="success">4.4</ion-badge>
+                <span>₹800 for 2</span>
+              </div>
+            </div>
+            <ion-icon name="heart-outline" class="fav-icon"></ion-icon>
+          </div>
+        </ion-col>
+  
+        <!-- Third Restaurant Card -->
+        <ion-col size="6">
+          <div class="restaurant-card">
+            <ion-img src="https://im1.dineout.co.in/images/uploads/restaurant/sharpen/8/t/z/p813-1646055380621ccfd4624c0.jpg?tr=tr:n-medium" class="restaurant-img"></ion-img>
+            <div class="restaurant-details">
+              <div class="info">
+                <h2>KSbarro - New York Pizza</h2>
+                <p>Kailash Business Park Vikhroli West Mumbai</p>
+                <p>Pizza, Fast Food, American, Italian</p>
+              </div>
+              <div class="meta">
+                <ion-badge color="success">3.3</ion-badge>
+                <span>₹700 for 2</span>
+              </div>
+            </div>
+            <ion-icon name="heart-outline" class="fav-icon"></ion-icon>
+          </div>
+        </ion-col>
+  
+        <!-- Fourth Restaurant Card -->
+        <ion-col size="6">
+          <div class="restaurant-card">
+            <ion-img src="https://im1.dineout.co.in/images/uploads/restaurant/sharpen/8/u/f/p807-15510888885c73bcf89fd8f.jpg?tr=tr:n-medium" class="restaurant-img"></ion-img>
+            <div class="restaurant-details">
+              <div class="info">
+                <h2>Malgudi</h2>
+                <p>R City Mall I Ghatkopar West I Mumbai</p>
+                <p>South Indian</p>
+              </div>
+              <div class="meta">
+                <ion-badge color="success">4.2</ion-badge>
+                <span>₹800 for 2</span>
+              </div>
+            </div>
+            <ion-icon name="heart-outline" class="fav-icon"></ion-icon>
+          </div>
+        </ion-col>
+  
+      </ion-row>
+    </ion-grid>
+    
+  </div>
+      
+</ion-content>

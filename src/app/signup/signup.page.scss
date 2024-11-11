@@ -1,0 +1,69 @@
+ion-content {
+    background: linear-gradient(to left, #6f2c91, #00a896); /* Gradient Background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  form {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    transition: transform 0.3s;
+  }
+  
+  form:hover {
+    transform: translateY(-5px); /* Lift on hover */
+  }
+  
+  ion-item {
+    margin-bottom: 20px;
+  }
+  
+  ion-label {
+    color: var(--ion-color-primary);
+    font-weight: 600;
+  }
+  
+  ion-input {
+    --padding-start: 10px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    transition: border-color 0.3s;
+  }
+  
+  ion-input:focus {
+    border-color: var(--ion-color-secondary);
+  }
+  
+  ion-button {
+    margin-top: 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  ion-button[expand="full"] {
+    background-color: var(--ion-color-primary);
+    color: white;
+  }
+  
+  ion-button[expand="full"]:hover {
+    background-color: var(--ion-color-secondary);
+    transform: scale(1.05); /* Scale on hover */
+  }
+  
+  ion-button[fill="clear"] {
+    color: var(--ion-color-primary);
+    text-decoration: underline;
+  }
+  
+  ion-button[fill="clear"]:hover {
+    text-decoration: none;
+    color: var(--ion-color-tertiary); /* Change color on hover */
+  }
+  

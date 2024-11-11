@@ -1,42 +1,101 @@
-<ion-header translucent>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/" text="Back"></ion-back-button>
-    </ion-buttons>
-    <ion-title>Booking</ion-title>
-    <ion-buttons slot="end">
-      <ion-button>
-        <ion-icon name="heart-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <div class="booking-container">
-    <h1>Select Date and Time</h1>
-    <ion-item>
-      <ion-label position="floating">Select Date</ion-label>
-      <ion-datetime [(ngModel)]="selectedDate" displayFormat="MMM DD, YYYY"></ion-datetime>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Select Time</ion-label>
-      <ion-select [(ngModel)]="selectedTime">
-        <ion-select-option value="12:00">12:00 PM</ion-select-option>
-        <ion-select-option value="13:00">1:00 PM</ion-select-option>
-        <ion-select-option value="14:00">2:00 PM</ion-select-option>
-        <ion-select-option value="15:00">3:00 PM</ion-select-option>
-        <ion-select-option value="16:00">4:00 PM</ion-select-option>
-        <ion-select-option value="17:00">5:00 PM</ion-select-option>
-      </ion-select>
-    </ion-item>
-    <ion-button expand="full" id="open-toast" (click)="confirmBooking()">Book Now</ion-button>
-    <ion-toast
-      trigger="open-toast"
-      [duration]="3000"
-      message="Booking confirmed!"
-      class="custom-toast"
-      [buttons]="toastButtons">
-    </ion-toast>
+  <div class="restaurant-package-container">
+    <div class="header-section">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back"></ion-icon> 
+      </ion-button>
+      <h2>Dine-out</h2>
+    </div>
   </div>
+  <h2 style="padding-left: 10px; font-weight: bold; color: rgb(0, 0, 0);">Premium Restaurants in Hyderabad</h2>
+  
+  <!-- Restaurant Card 1 -->
+  <ion-card class="restaurant-card">
+    <ion-img src="https://b.zmtcdn.com/data/pictures/3/96763/9d23148e76a9479d4b6e5bb4a15be1de.jpg" class="restaurant-img"></ion-img>
+    <ion-card-content>
+      <div class="restaurant-details">
+        <div class="info">
+          <h2>Jewel Of Nizam</h2>
+          <p>Hyderabad</p>
+          <p>Amazing Restaurant</p>
+        </div>
+        <div class="meta">
+          <ion-badge color="success">5.0</ion-badge>
+          <span>₹2000 for 2</span>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Restaurant Card 2 -->
+  <ion-card class="restaurant-card">
+    <ion-img src="https://b.zmtcdn.com/data/pictures/6/92616/aeb6e494801a643a537b6baf07a4dccc.jpg" class="restaurant-img"></ion-img>
+    <ion-card-content>
+      <div class="restaurant-details">
+        <div class="info">
+          <h2>Tre-Forni Bar & Restaurant</h2>
+          <p>Hyderabad</p>
+          <p>Extraordinary food and vibe</p>
+        </div>
+        <div class="meta">
+          <ion-badge color="success">4.0</ion-badge>
+          <span>₹800 for 2</span>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Restaurant Card 3 -->
+  <ion-card class="restaurant-card">
+    <ion-img src="https://cdn2.advanceinfotech.org/bharatdirectory.in/1200x675/business/5436/so-7-1721985145.webp" class="restaurant-img"></ion-img>
+    <ion-card-content>
+      <div class="restaurant-details">
+        <div class="info">
+          <h2>So The Sky Kitchen</h2>
+          <p>Hyderabad</p>
+          <p>Good ambienec,good service and food</p>
+        </div>
+        <div class="meta">
+          <ion-badge color="success">4.5</ion-badge>
+          <span>₹700 for 2</span>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Restaurant Card 4 -->
+  <ion-card class="restaurant-card">
+    <ion-img src="https://dineout-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/v1647350217/vm1lpzi729dfl5cyabht.webp" class="restaurant-img"></ion-img>
+    <ion-card-content>
+      <div class="restaurant-details">
+        <div class="info">
+          <h2>Spice 6 The Arab Villagio</h2>
+          <p>Hyderabad</p>
+          <p>Customer servive is amazing</p>
+        </div>
+        <div class="meta">
+          <ion-badge color="success">4.2</ion-badge>
+          <span>₹650 for 2</span>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Restaurant Card 5 -->
+  <ion-card class="restaurant-card">
+    <ion-img src="https://b.zmtcdn.com/data/pictures/1/18808521/bb30043de93f300d6315fc246f2fa62b.jpg" class="restaurant-img"></ion-img>
+    <ion-card-content>
+      <div class="restaurant-details">
+        <div class="info">
+          <h2>Krishnapatnam</h2>
+          <p>Hyderabad</p>
+          <p>Can have quality time here</p>
+        </div>
+        <div class="meta">
+          <ion-badge color="success">3.8</ion-badge>
+          <span>₹1500 for 2</span>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

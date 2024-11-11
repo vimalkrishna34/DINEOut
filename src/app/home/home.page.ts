@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Router } from '@angular/router'; // Import Router from Angular's router
 import { RefresherEventDetail } from '@ionic/angular';
 import { IonRefresherCustomEvent } from '@ionic/core';
 
@@ -8,29 +9,25 @@ import { IonRefresherCustomEvent } from '@ionic/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  locations = [
-    {
-      title: 'Hyderabad & Delhi',
-      image: 'assets/per11.jpg',
-      description: 'Discover amazing dining options in Hyderabad and Delhi, customized to fit your budget and preferences.',
-    },
-    {
-      title: 'Kochi & Mumbai',
-      image: 'assets/per2.jpg',
-      description: 'Discover amazing dining options in Kochi and Mumbai, customized to fit your budget and preferences.',
-    },
-    {
-      title: 'Bengaluru & Amritsar',
-      image: 'assets/per3.jpg',
-      description: 'Discover amazing dining options in Bengaluru and Amritsar, customized to fit your budget and preferences.',
+
+  @ViewChild('hiddenSearchInput', { static: false }) hiddenSearchInput!: ElementRef;
+
+  isSearchVisible = false;
+Explore: any;
+
+  constructor(private router: Router) {} 
+
+  toggleSearch() {
+    this.isSearchVisible = !this.isSearchVisible;
+    if (this.isSearchVisible) {
+      setTimeout(() => {
+        this.hiddenSearchInput.nativeElement.setFocus();
+      }, 100);
     }
-  ];
-
-  constructor() {}
-
-  handleRefresh(event: IonRefresherCustomEvent<RefresherEventDetail>) {
-    setTimeout(() => {
-      event.target.complete();
-    }, 2000);
   }
+  navigateToBooking() {
+    this.router.navigate(['/table-booking']);
+  }
+ 
+
 }

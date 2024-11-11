@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bengaluru',
@@ -6,10 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bengaluru.page.scss'],
 })
 export class BengaluruPage implements OnInit {
+  constructor(private router: Router) { }
 
-  constructor() { }
+  ngOnInit() { }
 
-  ngOnInit() {
+  navigateToBooking() {
+    this.router.navigate(['/pre-viz']);
+  }
+  navigateToBooking1() {
+    this.router.navigate(['/bud-viz']);
+  }
+  navigateToBooking2() {
+    this.router.navigate(['/clu-viz']);
+  }
+
+
+  goBack() {
+    this.router.navigate(['/home']);
   }
 
 }

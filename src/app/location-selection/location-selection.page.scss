@@ -1,42 +1,212 @@
-ion-card {
-    position: relative; /* For absolute positioning of overlay */
-    overflow: hidden;
-    transition: transform 0.3s ease;
+/* Navbar */
+.navbar {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.9));
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 0px 0px; 
+  width: 100%;
+  z-index: 1000;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar ion-title {
+  font-size: 1.6rem; 
+  font-family: 'Georgia', serif;
+  color: #333;
+  font-weight: bold;
+  padding-top:10px;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.navbar ion-button {
+  font-size: 0.85rem; 
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #333;
+  text-transform: uppercase;
+  margin-left: 10px; 
+  transition: color 0.3s ease-in-out;
+  position: relative;
+  animation: fadeInDown 1.2s ease-in-out;
+}
+
+.navbar ion-button:hover {
+  color: #ff7b00;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+}
+
+/* Navbar Hover Effect */
+.navbar ion-button::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: #ff7b00;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.navbar ion-button:hover::after {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
   }
   
-  ion-card img {
-    width: 100%;
-    height: 250px; /* Increased height to make images look less thin */
-    object-fit: cover; /* Ensures images cover the area proportionally */
-    transition: opacity 0.3s ease;
+  .navbar ion-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
   }
-  
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem; /* Size of the text */
-    color: white; /* Color of the text */
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for contrast */
-    opacity: 0; /* Hidden by default */
-    transition: opacity 0.3s ease;
+
+  .navbar ion-button {
+    margin: 5px 0;
+    font-size: 0.9rem;
   }
-  
-  .location-card:hover .overlay {
-    opacity: 1; /* Show overlay text on hover */
+}
+
+/* Image Container */
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Ensure the image takes up the full container */
+.image-container ion-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hero Section Text Overlay */
+.hero-section {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Hero Section Text Styling */
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+}
+
+/* Grid Styles */
+ion-grid {
+  padding: 20px;
+  position: absolute;
+  bottom: 5%;  /* Adjust to place the grid at the bottom of the image */
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Location card styles with animations */
+.location-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Adjust card height */
+  width: 180px; /* Adjust card width */
+  margin: 10px;
+  background-color: #FAD961;
+  background-image: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  cursor: pointer;
+  opacity: 0;  /* Initial state for fade-in */
+  transform: translateY(20px);  /* Initial position for slide-up effect */
+  animation: fadeInSlideUp 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; /* Slower and smoother slide-up and fade-in effect */
+  animation-delay: calc(0.2s * var(--delay)); /* Staggered effect with slower delay */
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.6s ease;
+}
+
+/* Hover effect with smooth scale */
+.location-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(to bottom right, #ff6347, #ff7f50);
+}
+
+/* City name styles */
+/* City name styles with location icon */
+.city-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  letter-spacing: 1.5px;
+  transition: color 0.3s ease;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Styling the location icon */
+.location-icon {
+  margin-right: 8px;
+  font-size: 1.3rem;
+  color: #ff6347; /* Matching the gradient or card theme */
+}
+
+/* Change text and icon color on hover */
+.location-card:hover .city-name {
+  color: white;
+}
+
+.location-card:hover .location-icon {
+  color: white; /* Icon color changes on hover */
+}
+
+
+/* Fade-in and slide-up effect for location cards */
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 430px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
+
   .location-card {
-    transition: box-shadow 0.3s ease;
+    height: 60px;
+    width: 130px;
   }
-  
-  .location-card:hover {
-    transform: translateY(-5px); /* Adds a slight lift effect on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
+
+  .city-name {
+    font-size: 1.2rem;
   }
-  
+}
