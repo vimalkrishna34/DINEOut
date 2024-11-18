@@ -2,100 +2,29 @@
   <div class="restaurant-package-container">
     <div class="header-section">
       <ion-button (click)="goBack()">
-        <ion-icon name="arrow-back"></ion-icon> 
+        <ion-icon name="arrow-back"></ion-icon>
       </ion-button>
       <h2>Dine-out</h2>
     </div>
+
+    <h2 style="padding-left: 10px; font-weight: bold; color: rgb(0, 0, 0);">Premium Restaurants in Hyderabad</h2>
+
+    <ion-card *ngFor="let restaurant of restaurants" class="restaurant-card">
+      <div *ngIf="restaurant.isFeatured" class="featured-badge">Featured</div>
+      <ion-img [src]="restaurant.imageUrl" class="restaurant-img" [alt]="restaurant.name"></ion-img>
+      <ion-card-content>
+        <div class="restaurant-details">
+          <div class="info">
+            <h2>{{ restaurant.name }}</h2>
+            <p>{{ restaurant.location }}</p>
+            <p>{{ restaurant.description }}</p>
+          </div>
+          <div class="meta">
+            <ion-badge color="success">{{ restaurant.rating }}</ion-badge>
+            <span>₹{{ restaurant.price }} for 2</span>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
   </div>
-  <h2 style="padding-left: 10px; font-weight: bold; color: rgb(0, 0, 0);">Premium Restaurants in Hyderabad</h2>
-  
-  <!-- Restaurant Card 1 -->
-  <ion-card class="restaurant-card">
-    <ion-img src="https://b.zmtcdn.com/data/pictures/3/96763/9d23148e76a9479d4b6e5bb4a15be1de.jpg" class="restaurant-img"></ion-img>
-    <ion-card-content>
-      <div class="restaurant-details">
-        <div class="info">
-          <h2>Jewel Of Nizam</h2>
-          <p>Hyderabad</p>
-          <p>Amazing Restaurant</p>
-        </div>
-        <div class="meta">
-          <ion-badge color="success">5.0</ion-badge>
-          <span>₹2000 for 2</span>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
-
-  <!-- Restaurant Card 2 -->
-  <ion-card class="restaurant-card">
-    <ion-img src="https://b.zmtcdn.com/data/pictures/6/92616/aeb6e494801a643a537b6baf07a4dccc.jpg" class="restaurant-img"></ion-img>
-    <ion-card-content>
-      <div class="restaurant-details">
-        <div class="info">
-          <h2>Tre-Forni Bar & Restaurant</h2>
-          <p>Hyderabad</p>
-          <p>Extraordinary food and vibe</p>
-        </div>
-        <div class="meta">
-          <ion-badge color="success">4.0</ion-badge>
-          <span>₹800 for 2</span>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
-
-  <!-- Restaurant Card 3 -->
-  <ion-card class="restaurant-card">
-    <ion-img src="https://cdn2.advanceinfotech.org/bharatdirectory.in/1200x675/business/5436/so-7-1721985145.webp" class="restaurant-img"></ion-img>
-    <ion-card-content>
-      <div class="restaurant-details">
-        <div class="info">
-          <h2>So The Sky Kitchen</h2>
-          <p>Hyderabad</p>
-          <p>Good ambienec,good service and food</p>
-        </div>
-        <div class="meta">
-          <ion-badge color="success">4.5</ion-badge>
-          <span>₹700 for 2</span>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
-
-  <!-- Restaurant Card 4 -->
-  <ion-card class="restaurant-card">
-    <ion-img src="https://dineout-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/v1647350217/vm1lpzi729dfl5cyabht.webp" class="restaurant-img"></ion-img>
-    <ion-card-content>
-      <div class="restaurant-details">
-        <div class="info">
-          <h2>Spice 6 The Arab Villagio</h2>
-          <p>Hyderabad</p>
-          <p>Customer servive is amazing</p>
-        </div>
-        <div class="meta">
-          <ion-badge color="success">4.2</ion-badge>
-          <span>₹650 for 2</span>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
-
-  <!-- Restaurant Card 5 -->
-  <ion-card class="restaurant-card">
-    <ion-img src="https://b.zmtcdn.com/data/pictures/1/18808521/bb30043de93f300d6315fc246f2fa62b.jpg" class="restaurant-img"></ion-img>
-    <ion-card-content>
-      <div class="restaurant-details">
-        <div class="info">
-          <h2>Krishnapatnam</h2>
-          <p>Hyderabad</p>
-          <p>Can have quality time here</p>
-        </div>
-        <div class="meta">
-          <ion-badge color="success">3.8</ion-badge>
-          <span>₹1500 for 2</span>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
 </ion-content>

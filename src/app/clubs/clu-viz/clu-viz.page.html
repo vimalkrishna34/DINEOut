@@ -2,100 +2,31 @@
   <div class="restaurant-package-container">
     <div class="header-section">
       <ion-button (click)="goBack()">
-        <ion-icon name="arrow-back"></ion-icon> 
+        <ion-icon name="arrow-back"></ion-icon>
       </ion-button>
       <h2>Dine-out</h2>
     </div>
   </div>
   <h2 style="padding-left: 10px; font-weight: bold; color: rgb(0, 0, 0);">Best Pubs/bars in Vizag</h2>
-  
-  <!-- Restaurant Card 1 -->
-  <ion-card class="restaurant-card">
-    <ion-img src="https://content.jdmagicbox.com/comp/visakhapatnam/g1/0891px891.x891.180124190419.w2g1/catalogue/myz-uno-brew-pub-siripuram-visakhapatnam-pubs-9gwfshfo92-250.jpg" class="restaurant-img"></ion-img>
-    <ion-card-content>
-      <div class="restaurant-details">
-        <div class="info">
-          <h2>MYZ - UNO Vizag</h2>
-          <p>Vishakpatnam</p>
-          <p>Amazing Resto bar, Our absolute fav</p>
-        </div>
-        <div class="meta">
-          <ion-badge color="success">5.0</ion-badge>
-          <span>₹700 for 2</span>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
 
-  <!-- Restaurant Card 2 -->
-  <ion-card class="restaurant-card">
-    <ion-img src="https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/200701161024592063-e2d22351-5ea7-4657-aa76-34dbeeb85e86.jpg" class="restaurant-img"></ion-img>
-    <ion-card-content>
-      <div class="restaurant-details">
-        <div class="info">
-          <h2> Tribe The Night Club</h2>
-          <p>Vishakpatnam</p>
-          <p>Superb drinks and vibe, nice service</p>
-        </div>
-        <div class="meta">
-          <ion-badge color="success">4.0</ion-badge>
-          <span>₹800 for 2</span>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
+  <div *ngFor="let restaurant of restaurants">
+    <ion-card class="restaurant-card">
+      <div *ngIf="restaurant.isFeatured" class="featured-badge">Featured</div>
 
-  <!-- Restaurant Card 3 -->
-  <ion-card class="restaurant-card">
-    <ion-img src="https://content.jdmagicbox.com/comp/visakhapatnam/x8/0891px891.x891.220228190755.k2x8/catalogue/somaa-yendada-visakhapatnam-restaurants-and-bars-5vp1tts8vv.jpg" class="restaurant-img"></ion-img>
-    <ion-card-content>
-      <div class="restaurant-details">
-        <div class="info">
-          <h2>SOMAA</h2>
-          <p>Vishakpatnam</p>
-          <p>Good ambience, good food and drinks</p>
+      <ion-img [src]="restaurant.image" class="restaurant-img"></ion-img>
+      <ion-card-content>
+        <div class="restaurant-details">
+          <div class="info">
+            <h2>{{ restaurant.name }}</h2>
+            <p>{{ restaurant.location }}</p>
+            <p>{{ restaurant.description }}</p>
+          </div>
+          <div class="meta">
+            <ion-badge color="success">{{ restaurant.rating }}</ion-badge>
+            <span>₹{{ restaurant.cost }} for 2</span>
+          </div>
         </div>
-        <div class="meta">
-          <ion-badge color="success">4.5</ion-badge>
-          <span>₹700 for 2</span>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
-
-  <!-- Restaurant Card 4 -->
-  <ion-card class="restaurant-card">
-    <ion-img src="https://content3.jdmagicbox.com/comp/visakhapatnam/f2/0891px891.x891.230910151732.k4f2/catalogue/viragoo-neo-age-pub-bheemili-visakhapatnam-pubs-8dqq6voh87.jpg" class="restaurant-img"></ion-img>
-    <ion-card-content>
-      <div class="restaurant-details">
-        <div class="info">
-          <h2>Viragoo Neo Age Pub</h2>
-          <p>Vishakpatnam</p>
-          <p>Customer servive is amazing</p>
-        </div>
-        <div class="meta">
-          <ion-badge color="success">4.2</ion-badge>
-          <span>₹650 for 2</span>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
-
-  <!-- Restaurant Card 5 -->
-  <ion-card class="restaurant-card">
-    <ion-img src="https://preview.redd.it/pub-in-vizag-v0-79leff7vwkvc1.jpeg?width=1360&format=pjpg&auto=webp&s=d15790541c811ff5bf69f1b3f34a7767ba6a5c44" class="restaurant-img"></ion-img>
-    <ion-card-content>
-      <div class="restaurant-details">
-        <div class="info">
-          <h2>Cosmic House</h2>
-          <p>Vishakpatnam</p>
-          <p>Can vibe with friends</p>
-        </div>
-        <div class="meta">
-          <ion-badge color="success">3.8</ion-badge>
-          <span>₹500 for 2</span>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>

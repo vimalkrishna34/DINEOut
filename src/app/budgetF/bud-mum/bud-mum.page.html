@@ -7,95 +7,28 @@
       <h2>Dine-out</h2>
     </div>
   </div>
-  <h2 style="padding-left: 10px; font-weight: bold; color: rgb(0, 0, 0);">Budget-friendly Restaurants in Mumbai</h2>
   
-  <!-- Restaurant Card 1 -->
-  <ion-card class="restaurant-card">
-    <ion-img src="https://b.zmtcdn.com/data/pictures/chains/3/32223/04e510d86f6e4055443fa3f0b5dd9c36.jpg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;," class="restaurant-img"></ion-img>
-    <ion-card-content>
-      <div class="restaurant-details">
-        <div class="info">
-          <h2>Ram Ashraya</h2>
-          <p>Mumbai</p>
-          <p>Affordable Restaurant</p>
-        </div>
-        <div class="meta">
-          <ion-badge color="success">5.0</ion-badge>
-          <span>₹450 for 2</span>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
+  <h2 style="padding-left: 10px; font-weight: bold; color: rgb(0, 0, 0);">Budget-friendly Restaurants in Mumbai</h2>
 
-  <!-- Restaurant Card 2 -->
-  <ion-card class="restaurant-card">
-    <ion-img src="https://b.zmtcdn.com/data/pictures/8/20860838/ad49b79d00e706b78c34a2ed60bd0476.jpg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;," class="restaurant-img"></ion-img>
-    <ion-card-content>
-      <div class="restaurant-details">
-        <div class="info">
-          <h2>Fusion Ville</h2>
-          <p>Mumbai</p>
-          <p>Best food at an affordable price</p>
-        </div>
-        <div class="meta">
-          <ion-badge color="success">4.0</ion-badge>
-          <span>₹500 for 2</span>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
+  <ng-container *ngFor="let restaurant of restaurants">
+    <div *ngIf="restaurant.isFeatured" class="featured-badge">Featured</div>
 
-  <!-- Restaurant Card 3 -->
-  <ion-card class="restaurant-card">
-    <ion-img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/2f/cc/dc/food-images.jpg?w=1100&h=-1&s=1" class="restaurant-img"></ion-img>
-    <ion-card-content>
-      <div class="restaurant-details">
-        <div class="info">
-          <h2>Delhi highway</h2>
-          <p>Mumbai</p>
-          <p>Amazing food and service</p>
+    <ion-card class="restaurant-card">
+      <ion-img [src]="restaurant.imageUrl" class="restaurant-img"></ion-img>
+      <ion-card-content>
+        <div class="restaurant-details">
+          <div class="info">
+            <h2>{{ restaurant.name }}</h2>
+            <p>{{ restaurant.location }}</p>
+            <p>{{ restaurant.description }}</p>
+          </div>
+          <div class="meta">
+            <ion-badge color="success">{{ restaurant.rating }}</ion-badge>
+            <span>{{ restaurant.price }}</span>
+          </div>
         </div>
-        <div class="meta">
-          <ion-badge color="success">4.5</ion-badge>
-          <span>₹400 for 2</span>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
 
-  <!-- Restaurant Card 4 -->
-  <ion-card class="restaurant-card">
-    <ion-img src="https://cdn.thatch.in/cdn-cgi/image/width=3840,format=webp/images/365111/afgdji.png" class="restaurant-img"></ion-img>
-    <ion-card-content>
-      <div class="restaurant-details">
-        <div class="info">
-          <h2>Cafe Madras®</h2>
-          <p>Mumbai</p>
-          <p>Customer servive is amazing</p>
-        </div>
-        <div class="meta">
-          <ion-badge color="success">4.2</ion-badge>
-          <span>₹650 for 2</span>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
-
-  <!-- Restaurant Card 5 -->
-  <ion-card class="restaurant-card">
-    <ion-img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/83/2d/f9/bb.jpg?w=1200&h=-1&s=1" class="restaurant-img"></ion-img>
-    <ion-card-content>
-      <div class="restaurant-details">
-        <div class="info">
-          <h2>Burma Burma Restaurant & Tea Room</h2>
-          <p>Mumbai</p>
-          <p>Can have quality time here</p>
-        </div>
-        <div class="meta">
-          <ion-badge color="success">3.8</ion-badge>
-          <span>₹500 for 2</span>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
 </ion-content>

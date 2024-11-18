@@ -92,6 +92,10 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'pre-del',
+    loadChildren: () => import('./pre-del/pre-del.module').then( m => m.PreDelPageModule)
+  },
 
 ];
 

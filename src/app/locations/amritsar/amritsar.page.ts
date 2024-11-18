@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./amritsar.page.scss'],
 })
 export class AmritsarPage implements OnInit {
+  
   constructor(private router: Router) { }
 
   ngOnInit() { }

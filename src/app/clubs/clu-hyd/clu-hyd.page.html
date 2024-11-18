@@ -2,100 +2,32 @@
   <div class="restaurant-package-container">
     <div class="header-section">
       <ion-button (click)="goBack()">
-        <ion-icon name="arrow-back"></ion-icon> 
+        <ion-icon name="arrow-back"></ion-icon>
       </ion-button>
       <h2>Dine-out</h2>
     </div>
   </div>
+
   <h2 style="padding-left: 10px; font-weight: bold; color: rgb(0, 0, 0);">Best Pubs/bars in Hyderabad</h2>
-  
-  <!-- Restaurant Card 1 -->
-  <ion-card class="restaurant-card">
-    <ion-img src="https://b.zmtcdn.com/data/pictures/9/18725609/6be66a9b53b7348cd6723824a86ba084.jpg" class="restaurant-img"></ion-img>
-    <ion-card-content>
-      <div class="restaurant-details">
-        <div class="info">
-          <h2>Carpe Diem</h2>
-          <p>Hyderabad</p>
-          <p>Amazing Resto bar, Our absolute fav</p>
-        </div>
-        <div class="meta">
-          <ion-badge color="success">5.0</ion-badge>
-          <span>₹700 for 2</span>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
 
-  <!-- Restaurant Card 2 -->
-  <ion-card class="restaurant-card">
-    <ion-img src="https://content.jdmagicbox.com/v2/comp/hyderabad/d7/040pxx40.xx40.160310105838.h7d7/catalogue/sound-and-spirits-madhapur-hyderabad-pubs-tk0ffz.jpg" class="restaurant-img"></ion-img>
-    <ion-card-content>
-      <div class="restaurant-details">
-        <div class="info">
-          <h2>Sounds & Spirits</h2>
-          <p>Hyderabad</p>
-          <p>Superb drinks and vibe, nice service</p>
-        </div>
-        <div class="meta">
-          <ion-badge color="success">4.0</ion-badge>
-          <span>₹800 for 2</span>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
+  <ng-container *ngFor="let restaurant of restaurants">
+    <div *ngIf="restaurant.isFeatured" class="featured-badge">Featured</div>
 
-  <!-- Restaurant Card 3 -->
-  <ion-card class="restaurant-card">
-    <ion-img src="https://b.zmtcdn.com/data/pictures/1/18464791/94690056e5a1e3e4901850a0e27be290.jpg" class="restaurant-img"></ion-img>
-    <ion-card-content>
-      <div class="restaurant-details">
-        <div class="info">
-          <h2>Amnesia Lounge Bar</h2>
-          <p>Hyderabad</p>
-          <p>Good ambience, good food and drinks</p>
+    <ion-card class="restaurant-card">
+      <ion-img [src]="restaurant.imgSrc" class="restaurant-img"></ion-img>
+      <ion-card-content>
+        <div class="restaurant-details">
+          <div class="info">
+            <h2>{{ restaurant.name }}</h2>
+            <p>{{ restaurant.location }}</p>
+            <p>{{ restaurant.description }}</p>
+          </div>
+          <div class="meta">
+            <ion-badge color="success">{{ restaurant.rating }}</ion-badge>
+            <span>{{ restaurant.price }}</span>
+          </div>
         </div>
-        <div class="meta">
-          <ion-badge color="success">4.5</ion-badge>
-          <span>₹700 for 2</span>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
-
-  <!-- Restaurant Card 4 -->
-  <ion-card class="restaurant-card">
-    <ion-img src="https://b.zmtcdn.com/data/pictures/2/18615342/af863758304024084ada101ce43450a6.jpg" class="restaurant-img"></ion-img>
-    <ion-card-content>
-      <div class="restaurant-details">
-        <div class="info">
-          <h2>Club Rogue</h2>
-          <p>Hyderabad</p>
-          <p>Customer servive is amazing</p>
-        </div>
-        <div class="meta">
-          <ion-badge color="success">4.2</ion-badge>
-          <span>₹650 for 2</span>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
-
-  <!-- Restaurant Card 5 -->
-  <ion-card class="restaurant-card">
-    <ion-img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/65/3c/34/a-luxury-pub-that-gives.jpg?w=1200&h=-1&s=1" class="restaurant-img"></ion-img>
-    <ion-card-content>
-      <div class="restaurant-details">
-        <div class="info">
-          <h2>Kismet The Park Hyderabad</h2>
-          <p>Hyderabad</p>
-          <p>Can vibe with friends</p>
-        </div>
-        <div class="meta">
-          <ion-badge color="success">3.8</ion-badge>
-          <span>₹500 for 2</span>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
 </ion-content>

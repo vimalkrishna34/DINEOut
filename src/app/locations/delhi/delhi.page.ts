@@ -12,7 +12,7 @@ export class DelhiPage implements OnInit {
   ngOnInit() { }
 
   navigateToBooking() {
-    this.router.navigate(['/premi-del']);
+    this.router.navigate(['/pre-del']);
   }
   navigateToBooking1() {
     this.router.navigate(['/club-del']);

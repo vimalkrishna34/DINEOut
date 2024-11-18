@@ -7,95 +7,28 @@
       <h2>Dine-out</h2>
     </div>
   </div>
-  <h2 style="padding-left: 10px; font-weight: bold; color: rgb(0, 0, 0);">Budget-friendly Restaurants in Delhi</h2>
   
-  <!-- Restaurant Card 1 -->
-  <ion-card class="restaurant-card">
-    <ion-img src="https://dineout-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/v1660374424/ylgm8u3lzmm1gxnhasie.jpg" class="restaurant-img"></ion-img>
-    <ion-card-content>
-      <div class="restaurant-details">
-        <div class="info">
-          <h2>Big Yellow Door</h2>
-          <p>Delhi</p>
-          <p>Affordable Restaurant</p>
-        </div>
-        <div class="meta">
-          <ion-badge color="success">5.0</ion-badge>
-          <span>₹450 for 2</span>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
+  <h2 style="padding-left: 10px; font-weight: bold; color: rgb(0, 0, 0);">Budget-friendly Restaurants in Delhi</h2>
 
-  <!-- Restaurant Card 2 -->
-  <ion-card class="restaurant-card">
-    <ion-img src="https://b.zmtcdn.com/data/pictures/7/7227/29b12496e47001375afb6ccdf26ef603.jpg" class="restaurant-img"></ion-img>
-    <ion-card-content>
-      <div class="restaurant-details">
-        <div class="info">
-          <h2>Out of the Box</h2>
-          <p>Delhi</p>
-          <p>Best food at an affordable price</p>
-        </div>
-        <div class="meta">
-          <ion-badge color="success">4.0</ion-badge>
-          <span>₹500 for 2</span>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
+  <ng-container *ngFor="let restaurant of restaurants">
+    <div *ngIf="restaurant.isFeatured" class="featured-badge">Featured</div>
 
-  <!-- Restaurant Card 3 -->
-  <ion-card class="restaurant-card">
-    <ion-img src="https://b.zmtcdn.com/data/pictures/chains/7/6677/f7299e192e0eb543b293728fa8ad16f4_featured_v2.jpg" class="restaurant-img"></ion-img>
-    <ion-card-content>
-      <div class="restaurant-details">
-        <div class="info">
-          <h2>Kake Di Hatti</h2>
-          <p>Delhi</p>
-          <p>Amazing food and service</p>
+    <ion-card class="restaurant-card">
+      <ion-img [src]="restaurant.image" class="restaurant-img"></ion-img>
+      <ion-card-content>
+        <div class="restaurant-details">
+          <div class="info">
+            <h2>{{ restaurant.name }}</h2>
+            <p>{{ restaurant.location }}</p>
+            <p>{{ restaurant.description }}</p>
+          </div>
+          <div class="meta">
+            <ion-badge color="success">{{ restaurant.rating }}</ion-badge>
+            <span>{{ restaurant.price }}</span>
+          </div>
         </div>
-        <div class="meta">
-          <ion-badge color="success">4.5</ion-badge>
-          <span>₹400 for 2</span>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
 
-  <!-- Restaurant Card 4 -->
-  <ion-card class="restaurant-card">
-    <ion-img src="https://b.zmtcdn.com/data/pictures/7/20431907/ee385168d664fdc845f6944ab85c8cfb.jpg" class="restaurant-img"></ion-img>
-    <ion-card-content>
-      <div class="restaurant-details">
-        <div class="info">
-          <h2>QD</h2>
-          <p>Delhi</p>
-          <p>Customer servive is amazing</p>
-        </div>
-        <div class="meta">
-          <ion-badge color="success">4.2</ion-badge>
-          <span>₹650 for 2</span>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
-
-  <!-- Restaurant Card 5 -->
-  <ion-card class="restaurant-card">
-    <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqubGEHRNt2Hx_vdCShUKCd2NionUhnB2clw&s" class="restaurant-img"></ion-img>
-    <ion-card-content>
-      <div class="restaurant-details">
-        <div class="info">
-          <h2>Sandoz Restaurant</h2>
-          <p>Delhi</p>
-          <p>Can have quality time here</p>
-        </div>
-        <div class="meta">
-          <ion-badge color="success">3.8</ion-badge>
-          <span>₹500 for 2</span>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
 </ion-content>
