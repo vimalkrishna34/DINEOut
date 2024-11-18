@@ -1,1 +1,2 @@
 .angular.zip filter=lfs diff=lfs merge=lfs -text
+*.extension filter=lfs diff=lfs merge=lfs -text
