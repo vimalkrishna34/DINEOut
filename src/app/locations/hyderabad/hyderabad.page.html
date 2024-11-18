@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar class="navbar">
+    <ion-title>Dine Out</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/home">Home</ion-button>
+      <ion-button (click)="goBack()">Table-Booking</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="section-heading">
+    <h2>Explore Our Dining Options</h2>
+  </div>
+
+  <div class="cards-container">
+    <ion-card class="restaurant-card" (click)="navigateToBooking()">
+      <ion-img src="https://i.pinimg.com/564x/8d/bf/b6/8dbfb612dd9709512e85ca1018bb43e7.jpg" alt="Premium Restaurant"></ion-img>
+      <ion-card-header class="card-header">
+        <ion-card-title>Premium Restaurant</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+
+    <ion-card class="restaurant-card" (click)="navigateToBooking1()">
+      <ion-img src="https://i.pinimg.com/564x/d5/4b/45/d54b457216d2c84be14f43280032b9e2.jpg" alt="Budget-friendly Restaurant"></ion-img>
+      <ion-card-header class="card-header">
+        <ion-card-title>Budget-friendly Restaurant</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+
+    <ion-card class="restaurant-card" (click)="navigateToBooking2()">
+      <ion-img src="https://i.pinimg.com/564x/9c/02/67/9c0267f14cec41b97e700245820e835d.jpg" alt="Clubs & Pubs"></ion-img>
+      <ion-card-header class="card-header">
+        <ion-card-title>Clubs & Pubs</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </div>
+</ion-content>
