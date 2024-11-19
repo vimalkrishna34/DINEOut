@@ -11,9 +11,10 @@
   <h2 style="padding-left: 10px; font-weight: bold; color: rgb(0, 0, 0);">Budget-friendly Restaurants in Amritsar</h2>
 
   <ng-container *ngFor="let restaurant of restaurants">
-    <div *ngIf="restaurant.isFeatured" class="featured-badge">Featured</div>
 
     <ion-card class="restaurant-card">
+      <div *ngIf="restaurant.isFeatured" class="featured-badge">Featured</div>
+
       <ion-img [src]="restaurant.image" class="restaurant-img"></ion-img>
       <ion-card-content>
         <div class="restaurant-details">
